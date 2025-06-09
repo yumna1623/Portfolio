@@ -13,7 +13,7 @@ const Projects = () => {
       tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       description:
         "A responsive restaurant website inspired by Kababjees using Bootstrap for layout and styling.",
-      github: "https://github.com/your-username/kababjees-clone",
+      github: "https://github.com/yumna1623/Kababjees-Website.git",
       live: "https://kababjees-clone-demo.com",
     },
     {
@@ -22,7 +22,7 @@ const Projects = () => {
       tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       description:
         "A clone of Apple’s official website featuring smooth transitions, product sections, and responsiveness.",
-      github: "https://github.com/your-username/apple-clone",
+      github: "https://github.com/yumna1623/Apple-Website.git",
       live: "https://apple-clone-demo.com",
     },
     {
@@ -31,7 +31,7 @@ const Projects = () => {
       tags: ["React", "JavaScript", "Tailwind", "Bootstrap", "Firebase"],
       description:
         "A web app to manage tasks with CRUD operations. Used Firebase for authentication and data storage.",
-      github: "https://github.com/your-username/task-manager",
+      github: "https://github.com/yumna1623/Hackathon2.git",
       live: "https://task-manager-demo.com",
     },
     {
@@ -40,7 +40,7 @@ const Projects = () => {
       tags: ["C++", "DSA", "Graphs", "Dijkstra"],
       description:
         "Console-based program in C++ for finding shortest paths using graph algorithms like Dijkstra.",
-      github: "https://github.com/your-username/route-finder",
+      github: "https://github.com/yumna1623/DSA.git",
       live: "https://your-route-finder-link.com",
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       tags: ["Java", "JavaFX", "SceneBuilder", "File Handling"],
       description:
         "JavaFX-based system allowing patient and doctor management with file-based storage.",
-      github: "https://github.com/your-username/hospital-management",
+      github: "https://github.com/yumna1623/Hospital-Managemet-System.git",
       live: "https://your-project-live-link.com",
     },
     {
@@ -58,7 +58,7 @@ const Projects = () => {
       tags: ["C++"],
       description:
         "A console-based C++ program that allows users to play various games like Hangman, Number Guessing Game, Rock Paper Scissors, and Tic Tac Toe through a menu-driven interface.",
-      github: "https://github.com/your-username/menu-driven-program",
+      github: "https://github.com/yumna1623/c-Menu-Driven-Program.git",
       live: "https://your-project-live-link.com",
     },
   ];
@@ -71,9 +71,9 @@ const Projects = () => {
   return (
     <section
     id="projects"
-      className={`py-16 px-4 sm:px-6 md:px-10 lg:px-20 transition-all duration-500 
+      className={`py-16 px-4 mb-0 sm:px-6 md:px-10 lg:px-20 transition-all duration-500 
         ${
-        darkMode ? "bg-[#0F172A] text-white" : " bg-gradient-to-b from-purple-100 via-white to-purple-100text-black"    	    
+        darkMode ? "bg-[#0F172A] text-white" : " bg-gradient-to-b from-purple-100 via-white to-cyan-200 text-black"    	    
       }`}
     >
       <div className="flex justify-between items-center mb-10 relative">
@@ -112,9 +112,11 @@ const Projects = () => {
             className={`p-6 rounded-2xl shadow-lg transition-all duration-500 
               hover:shadow-[0_0_15x_#00ffff,0_0_26px_#00ffff,0_0_35px_#00ffff]
              hover:bg-[#1e293b] hover:text-black hover:transform hover:scale-105
-              ease-in-out border flex flex-col cursor-pointer ${
+              ease-in-out border flex flex-col cursor-pointer
+              
+              ${
                 darkMode
-                  ? "bg-[#1e293b] text-white border-transparent hover:border-[#00ffff]"
+                  ? "bg-[#1e293b] text-white border-transparent hover:bg-cyan-300 hover:text-shadow-black hover:border-[#00ffff]"
                   :  " bg-gray-100 text-black border border-cyan-300 hover:border-[#00ffff] hover:bg-[#1e293b] hover:text-white "
               }`}
           >
@@ -144,12 +146,14 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-orange-500 hover:bg-[#00ffff] hover:text-black text-white px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition duration-300 whitespace-nowrap"
+                  className="bg-orange-500  hover:text-white text-white px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition duration-300 whitespace-nowrap
+                  
+                  "
                 >
                   View GitHub
                 </a>
               )}
-              {project.live && (
+              {/* {project.live && (
                 <a
                   href={project.live}
                   target="_blank"
@@ -162,7 +166,7 @@ const Projects = () => {
                 >
                   Live Preview
                 </a>
-              )}
+              )} */}
             </div>
           </div>
         ))}
