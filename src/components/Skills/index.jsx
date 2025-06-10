@@ -70,7 +70,8 @@ const Skills = () => {
       </button>
 
       {/* Background effects */}
-      <div className="absolute inset-0 animate-gradient blur-3xl opacity-25 z-0" style={{ backgroundColor: bgColor }}></div>
+      <div className="absolute inset-0 animate-gradient blur-3xl opacity-25 z-0      bg-gradient-to-b from-cyan-100 via-white to-purple-100
+ " style={{ backgroundColor: bgColor }}></div>
       <div className="absolute inset-0 z-0" style={{ backgroundColor: bgColor }}></div>
 
       <motion.div
