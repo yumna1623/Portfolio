@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import AboutMe from "../../assets/AboutMe.png";
+// import AboutMe from "../../assets/AboutMe.png";
+import AboutMe from "../../assets/AboutMe.png";  // Vite-specific fix
 
 const About = () => {
   return (
