@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import AboutMe from "../../assets/AboutMe.png";
+// import AboutMe from "../../assets/AboutMe.png";
 
 const About = () => {
   return (
@@ -62,7 +62,7 @@ const About = () => {
           <div className="absolute inset-0 rounded-xl bg-[#00ADB5] opacity-25 blur-3xl -z-10 animate-pulse"></div>
 
           <img
-            src={AboutMe}
+            src="../../assets/AboutMe.png"
             alt="About Yumna"
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
