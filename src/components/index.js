@@ -1,8 +1,4 @@
-import NavBar from "./NavBar";
-import Hero from "./Hero";
-import About from "./About";
-import Skills from "./Skills";
-import Contact from "./Contact";
-export { default as Projects } from './Projects';
+import Box from "./Box";
 
-export {NavBar , Hero , About , Skills , Contact};
+
+export {Box };
