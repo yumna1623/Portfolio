@@ -21,12 +21,14 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[75%] rounded-2xl px-4 md:px-8 py-3 shadow-md backdrop-blur-lg transition-colors duration-300 ${
-        darkMode ? "bg-black/20 text-white" : "bg-white/30 text-black"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[85%] rounded-2xl px-4 md:px-8 py-3 shadow-md backdrop-blur-lg border transition-colors duration-300 ${
+        darkMode
+          ? "bg-black/30 border-black/20 text-white"
+          : "bg-gray-200/60 border-gray-300/50 text-black"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="text-xl font-semibold font-[system-ui] select-none">
+        <div className="text-xl font-semibold font-[system-ui] select-none text-inherit">
           Yumnaverse
         </div>
 
@@ -36,7 +38,7 @@ export default function NavBar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-[#00ADB5]"
+                className="hover:text-[#00ADB5] text-inherit"
               >
                 {link.label}
               </a>
@@ -46,14 +48,14 @@ export default function NavBar() {
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle dark mode"
-            className="p-2 rounded hover:bg-amber-500 transition"
+            className="p-2 rounded hover:bg-amber-500 transition text-inherit"
           >
             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className={`md:hidden p-2 rounded border transition ${
+            className={`md:hidden p-2 rounded border transition text-inherit ${
               darkMode ? "border-gray-600" : "border-gray-300"
             }`}
           >
@@ -65,7 +67,7 @@ export default function NavBar() {
       {menuOpen && (
         <div
           className={`md:hidden px-4 pt-2 pb-4 flex flex-col space-y-3 transition-colors duration-300 ${
-            darkMode ? "bg-black/20 text-white" : "bg-white/30 text-black"
+            darkMode ? "bg-black/30 text-white" : "bg-gray-200/60 text-black"
           }`}
         >
           {navLinks.map((link) => (
@@ -73,7 +75,7 @@ export default function NavBar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="hover:text-[#00ADB5]"
+              className="hover:text-[#00ADB5] text-inherit"
             >
               {link.label}
             </a>
