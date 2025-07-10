@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTheme } from "../../context/ThemeContext";
-
 import doodles from "../../assets/doodles.png";
 import Man from "../../assets/Man.png";
 
@@ -17,28 +16,8 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className={`relative transition-colors duration-500 mb-0 min-h-screen w-full flex items-center justify-center overflow-hidden
-        ${
-          darkMode
-            ? "bg-[#0F172A] text-white"
-            : "bg-gradient-to-b from-cyan-100 via-white to-purple-100"
-        }`}
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black text-white transition-colors duration-500"
     >
-      {!darkMode && (
-        <svg
-          className="absolute w-full h-full opacity-10"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 800 600"
-        >
-          <line x1="0" y1="1" x2="100" y2="600" stroke="#00ADB5" strokeWidth="1" />
-          <line x1="0" y1="600" x2="800" y2="0" stroke="#00ADB5" strokeWidth="1" />
-          <line x1="400" y1="0" x2="800" y2="600" stroke="#00ADB5" strokeWidth="0.5" />
-          <line x1="0" y1="300" x2="800" y2="300" stroke="#00ADB5" strokeWidth="0.5" />
-          <line x1="200" y1="0" x2="200" y2="600" stroke="#00ADB5" strokeWidth="0.5" />
-        </svg>
-      )}
-
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-6 md:px-20 py-20 relative z-10">
         {/* Left content */}
         <div
@@ -57,8 +36,7 @@ export default function Hero() {
           </h2>
 
           <p
-            className="text-md md:text-lg mt-6 leading-relaxed"
-            style={{ color: darkMode ? "#D1D5DB" : "#4B5563" }}
+            className="text-md md:text-lg mt-6 leading-relaxed text-gray-300"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -71,7 +49,7 @@ export default function Hero() {
             data-aos-delay="500"
           >
             {["Team Collaborator", "AI Enthusiast", "Problem Solver"].map(
-              tag => (
+              (tag) => (
                 <span
                   key={tag}
                   className="bg-[#00adb51a] text-[#00ADB5] px-3 py-1 rounded-full text-sm"
@@ -87,12 +65,7 @@ export default function Hero() {
             download
             data-aos="fade-up"
             data-aos-delay="700"
-            className={`inline-block border-2 border-[#00ADB5] font-semibold px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all duration-300 mt-6 ml-4
-              ${
-                darkMode
-                  ? "bg-[#00ADB5] text-black hover:bg-transparent hover:text-[#00ADB5] dark:hover:bg-[#393E46] dark:hover:text-white"
-                  : "bg-[#00ADB5] text-black hover:bg-transparent hover:text-[#00ADB5]"
-              }`}
+            className="inline-block border-2 border-[#00ADB5] font-semibold px-6 py-3 rounded-lg shadow hover:shadow-lg transition-all duration-300 mt-6 ml-4 bg-[#00ADB5] text-black hover:bg-transparent hover:text-[#00ADB5]"
           >
             Download CV
           </a>
@@ -115,13 +88,11 @@ export default function Hero() {
           />
           <div className="relative p-2 rounded-full z-10">
             <div className="relative rounded-full border-4 border-[#00ADB5] p-2 shadow-lg">
-              <div className="rounded-full overflow-hidden border-2 border-white dark:border-[#393E46]">
+              <div className="rounded-full overflow-hidden border-2 border-white">
                 <img
                   src={Man}
                   alt="Man"
-                  className="object-cover 
-                  
-                  rounded-full"
+                  className="object-cover rounded-full"
                 />
               </div>
             </div>

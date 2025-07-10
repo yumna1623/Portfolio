@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import logo from "../../assets/logo.png";
 import { useTheme } from "../../context/ThemeContext";
 
 export default function NavBar() {
   const { darkMode, toggleDarkMode } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "About Me", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact Me", href: "#contact" },
+    { label: "About Me", href: "#about" }
   ];
 
   useEffect(() => {
@@ -24,31 +21,28 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 shadow-md transition-colors duration-300 ${
-        darkMode ? "bg-[#222831] text-white" : "bg-white text-black"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[75%] rounded-2xl px-4 md:px-8 py-3 shadow-md backdrop-blur-lg transition-colors duration-300 ${
+        darkMode ? "bg-black/20 text-white" : "bg-white/30 text-black"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-2 flex items-center justify-between">
-        <div className="h-12 w-48 select-none">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-full w-full object-contain"
-            style={{ filter: darkMode ? "" : "invert(0)" }}
-          />
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="text-xl font-semibold font-[system-ui] select-none">
+          Yumnaverse
         </div>
-        <div className="hidden md:flex space-x-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="hover:text-[#00ADB5]"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center space-x-4">
+
+        <div className="flex items-center space-x-6">
+          <div className="hidden md:flex space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="hover:text-[#00ADB5]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
           <button
             onClick={toggleDarkMode}
             aria-label="Toggle dark mode"
@@ -56,6 +50,7 @@ export default function NavBar() {
           >
             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
+
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className={`md:hidden p-2 rounded border transition ${
@@ -66,10 +61,11 @@ export default function NavBar() {
           </button>
         </div>
       </div>
+
       {menuOpen && (
         <div
-          className={`md:hidden px-6 pb-4 flex flex-col space-y-3 transition-colors duration-300 ${
-            darkMode ? "bg-[#222831] text-white" : "bg-white text-black"
+          className={`md:hidden px-4 pt-2 pb-4 flex flex-col space-y-3 transition-colors duration-300 ${
+            darkMode ? "bg-black/20 text-white" : "bg-white/30 text-black"
           }`}
         >
           {navLinks.map((link) => (
