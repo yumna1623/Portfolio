@@ -1,28 +1,56 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 const Contact = () => {
+  const { darkMode } = useTheme();
+
+  const bgColor = darkMode ? "#000000" : "#ffffff";
+  const textColor = darkMode ? "#ffffff" : "#1F2937";
+  const subTextColor = darkMode ? "#D1D5DB" : "#4B5563";
+  const iconColor = darkMode ? "#D1D5DB" : "#4B5563";
+  const borderColor = darkMode ? "#4B5563" : "#E5E7EB";
+
   return (
     <motion.section
       id="contact"
-      className="w-full flex flex-col items-center justify-center px-6 py-16 bg-white dark:bg-[#222831]"
+      className="w-full flex flex-col items-center justify-center px-6 py-16 relative overflow-hidden transition-colors duration-500 ease-in-out"
+      style={{
+        backgroundColor: bgColor,
+        fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,
+      }}
     >
-      <div className="max-w-xl w-full text-center">
+      {/* 💫 Gradient Overlay - more visible now */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-pink-300 to-green-300 opacity-40 z-0" />
+
+      {/* 🧊 Glass Layer - softens based on mode */}
+      <div
+        className={`absolute inset-0 backdrop-blur-md z-0 ${
+          darkMode ? "bg-white/5" : "bg-white/10"
+        }`}
+      />
+
+      {/* 🌟 Content */}
+      <div className="relative z-10 max-w-xl w-full text-center">
         <h2
-          className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          className="text-4xl font-bold mb-4"
+          style={{ color: textColor }}
           data-aos="fade-right"
         >
           Let's Connect
         </h2>
+
         <p
-          className="text-gray-600 dark:text-gray-300 mb-10 text-base sm:text-lg"
+          className="mb-10 text-base sm:text-lg"
+          style={{ color: subTextColor }}
           data-aos="fade-left"
         >
-          Whether you want to discuss a project, collaborate, or just say hi — my inbox is open. Feel free to connect with me!
+          Whether you want to discuss a project, collaborate, or just say hi — my inbox is open.
+          Feel free to connect with me!
         </p>
 
-        {/* Icon Row */}
+        {/* 🔗 Social Icons */}
         <div
           className="flex justify-center gap-8 mb-12"
           data-aos="zoom-in"
@@ -33,7 +61,8 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
-            className="transform transition duration-300 hover:scale-110 hover:-rotate-3 text-gray-600 dark:text-gray-300 hover:text-[#0A66C2] text-3xl"
+            className="transition transform hover:scale-110 hover:-rotate-3 text-3xl"
+            style={{ color: iconColor }}
           >
             <FaLinkedin />
           </a>
@@ -42,21 +71,25 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
-            className="transform transition duration-300 hover:scale-110 hover:rotate-3 text-gray-600 dark:text-gray-300 hover:text-white text-3xl"
+            className="transition transform hover:scale-110 hover:rotate-3 text-3xl"
+            style={{ color: iconColor }}
           >
             <FaGithub />
           </a>
           <a
             href="mailto:yumnanasir1623@example.com"
             title="Email"
-            className="transform transition duration-300 hover:scale-110 hover:-rotate-6 text-gray-600 dark:text-gray-300 hover:text-red-500 text-3xl"
+            className="transition transform hover:scale-110 hover:-rotate-6 text-3xl"
+            style={{ color: iconColor }}
           >
             <FaEnvelope />
           </a>
         </div>
 
+        {/* 👣 Footer */}
         <footer
-          className="border-t pt-4 text-sm text-gray-500 dark:text-gray-400 flex justify-center items-center gap-1"
+          className="border-t pt-4 text-sm flex justify-center items-center gap-1"
+          style={{ color: subTextColor, borderColor: borderColor }}
           data-aos="fade-up"
         >
           <span>Designed with</span>

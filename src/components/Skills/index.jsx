@@ -41,9 +41,8 @@ const itemVariants = {
 };
 
 const Skills = () => {
-  const { darkMode, setDarkMode } = useTheme(); // ✅ destructure setDarkMode
+  const { darkMode, setDarkMode } = useTheme();
 
-  const bgColor = darkMode ? "#0F172A" : "#ffffff";
   const textColor = darkMode ? "#D1D5DB" : "#1F2937";
   const iconBg = darkMode ? "rgba(0, 173, 181, 0.1)" : "rgba(0, 173, 181, 0.15)";
   const iconShadow = darkMode ? "rgba(0, 173, 181, 0.7)" : "rgba(0, 173, 181, 0.5)";
@@ -51,27 +50,25 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="transition-colors
-     bg-gradient-to-b from-cyan-100 via-white to-purple-100
-
-      duration-500 min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden"
+      className={`mb-0 min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden 
+      transition-colors duration-500 ease-in-out font-[system-ui,-apple-system,BlinkMacSystemFont] ${
+        darkMode
+          ? "bg-black text-white"
+          : "bg-gradient-to-br from-[#f0f4ff] via-[#ffffff] to-[#ecf5ff] text-black"
+      }`}
     >
-      {/* Toggle Button */}
-      <button
-        onClick={() => setDarkMode((prev) => !prev)}
-        className="mb-6 px-4 py-2 rounded-md font-semibold"
-        style={{
-          backgroundColor: darkMode ? "#00ADB5" : "#1F2937",
-          color: darkMode ? "#0F172A" : "#ffffff",
-          transition: "background-color 0.3s, color 0.3s",
-        }}
-      >
-        Toggle {darkMode ? "Light" : "Dark"} Mode
-      </button>
+      {/* Custom radial background overlay */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className={`w-full h-full ${
+            darkMode
+              ? "bg-[radial-gradient(circle_at_center,_#1e293b_0%,_#0f172a_60%,_#000000_100%)]"
+              : "bg-[radial-gradient(circle_at_center,_#e3f2fd_0%,_#ffffff_80%,_#ffffff_100%)]"
+          }`}
+        ></div>
+      </div>
 
-      {/* Background effects */}
-      <div className="absolute inset-0 animate-gradient blur-3xl opacity-25 z-0" style={{ backgroundColor: bgColor }}></div>
-      <div className="absolute inset-0 z-0" style={{ backgroundColor: bgColor }}></div>
+     
 
       <motion.div
         className="relative z-10 w-full max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:py-20 flex flex-col items-center justify-center text-center space-y-6"
@@ -82,12 +79,12 @@ const Skills = () => {
       >
         {/* Heading */}
         <motion.h2
-          style={{ color: textColor }}
           className="text-2xl sm:text-3xl md:text-5xl font-bold leading-snug"
+          style={{ color: textColor }}
           variants={itemVariants}
         >
-          I'm looking to Join a{" "}
-          <span className="text-[#00ADB5] underline underline-offset-4 decoration-[#00ADB5]/60">
+          I'm looking to join a{" "}
+          <span className="bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent font-extrabold">
             cross-functional
           </span>{" "}
           team
@@ -95,8 +92,8 @@ const Skills = () => {
 
         {/* Paragraph */}
         <motion.p
-          style={{ color: textColor }}
           className="text-sm sm:text-base md:text-lg max-w-xl"
+          style={{ color: textColor }}
           variants={itemVariants}
         >
           that values improving people’s lives through accessible and inclusive design.

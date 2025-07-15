@@ -21,7 +21,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[85%] rounded-2xl px-4 md:px-8 py-3 shadow-md backdrop-blur-lg border transition-colors duration-300 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[75%] rounded-2xl px-4 md:px-8 py-3 shadow-md backdrop-blur-lg border transition-colors duration-300 ${
         darkMode
           ? "bg-black/30 border-black/20 text-white"
           : "bg-gray-200/60 border-gray-300/50 text-black"

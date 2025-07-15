@@ -20,9 +20,9 @@ function App() {
     >
       <NavBar />
       <Hero />
-      <About />
       <JobIntrest/>
       <Skills />
+      <About />
       <Projects />
       <Contact />
     </div>
